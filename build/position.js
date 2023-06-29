@@ -7,5 +7,14 @@ class Position {
         this.y = y;
         this.orientation = orientation;
     }
+    getX() {
+        return this.x;
+    }
+    getY() {
+        return this.y;
+    }
+    getOrientation() {
+        return this.orientation;
+    }
 }
 exports.Position = Position;

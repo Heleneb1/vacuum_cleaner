@@ -65,7 +65,7 @@ class VacuumCleaner {
     this.position.orientation = this.directions[newOrientation]
   }
 
-  moveForward() {
+  moveForward(grid: Grid) {
     const position = this.getPosition()
     const orientation = position.orientation
 
@@ -85,9 +85,11 @@ class VacuumCleaner {
     const newX = position.x + deltaX
     const newY = position.y + deltaY
 
-    if (this.isInGrid(newX, newY)) {
+    if (this.isInGrid(newX, newY, grid)) {
       position.x = newX
       position.y = newY
+    } else {
+      console.error('Aspirateur hors zone de nettoyage.')
     }
   }
 
@@ -95,13 +97,13 @@ class VacuumCleaner {
     return this.position
   }
 
-  private isInGrid(x: number, y: number): boolean {
+  private isInGrid(x: number, y: number, grid: Grid): boolean {
     const { sizeX, sizeY } = grid
     return x >= 0 && x < sizeX && y >= 0 && y < sizeY
   }
 }
 
-function controlVacuum(
+export function controlVacuum(
   grid: Grid,
   initialPosition: Position,
   instructions: string
@@ -114,26 +116,9 @@ function controlVacuum(
     } else if (instruction === 'G') {
       vacuumCleaner.rotateLeft()
     } else if (instruction === 'A') {
-      vacuumCleaner.moveForward()
+      vacuumCleaner.moveForward(grid)
     }
   }
 
   return vacuumCleaner.getPosition()
 }
-
-// Utilisation de l'application
-
-const gridSizeX: number = 10
-const gridSizeY: number = 10
-const grid: Grid = new Grid(gridSizeX, gridSizeY)
-
-const initialPosition: Position = new Position(5, 5, 'N')
-const instructions: string = 'DADADADAA'
-
-const finalPosition: Position = controlVacuum(
-  grid,
-  initialPosition,
-  instructions
-)
-
-console.log("Position finale de l'aspirateur:", finalPosition)
