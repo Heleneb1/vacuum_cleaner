@@ -15,12 +15,15 @@ Ce projet consiste à développer une application permettant de contrôler un as
 
 ## Installation
 
-Depuis github, clonez le repository via git clone git@github.com:Heleneb1/vacuum_cleaner.git. et entrée
+Depuis github, clonez le repository via :
+git clone git@github.com:Heleneb1/vacuum_cleaner.git.
 
-Naviguer vers le répertoire du projet :cd vacuum_cleaner
+et entrée
 
-Faîtes un npm i ou npm install afin d'installer les dépendances nécéssaire à l'execution du projet.
-Puis l'ouvrir dans votre IDE (code . , pour Visual Studio Code (VS Code) )
+Ensuite, accédez au répertoire du projet :cd vacuum_cleaner
+
+Faîtes un npm i ou npm install afin d'installer les dépendances nécéssaires à l'execution du projet.
+Puis l'ouvrir le projet dans votre IDE (code . , pour Visual Studio Code (VS Code) )
 
 ## Utilisation
 
@@ -28,7 +31,7 @@ Exemples et instructions d'utilisation.
 
 Pour exécuter l'application, utilisez la commande suivante : npm start
 
-Des tests sont également disponible. Pour les executer : npm test
+Des tests sont également disponible. Pour les executer, utilisez la commande suivante : npm test
 
 ## Structure du projet
 
